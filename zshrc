@@ -1,3 +1,8 @@
+alias vim="stty stop '' -ixoff; vim"
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+# This is the suggested zshrc from oh-my-zsh:
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
