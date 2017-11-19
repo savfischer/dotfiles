@@ -1,0 +1,16 @@
+if &compatible
+  set nocompatible
+end
+
+call plug#begin('~/.vim/bundle')
+
+" Define bundles via Github repos
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'acarapetis/vim-colors-github'
+Plug 'vim-scripts/tComment'
+Plug 'kchmck/vim-coffee-script'
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'mileszs/ack.vim'
+call plug#end()
