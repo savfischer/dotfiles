@@ -1,3 +1,5 @@
+Setup code:
+
 ````
 ln -s dropbox/dev/dotfiles/vimrc .vimrc
 ln -s dropbox/dev/dotfiles/zshrc .zshrc
