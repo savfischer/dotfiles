@@ -1,5 +1,6 @@
 alias vim="stty stop '' -ixoff; vim"
 export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # This is the suggested zshrc from oh-my-zsh:
 
