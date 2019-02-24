@@ -36,22 +36,19 @@ set colorcolumn=+1
 " Display extra whitespace
 set list listchars=tab:»·,trail:·,nbsp:·
 
+nnoremap <C-p> :Files<cr>
+ let g:fzf_files_options =
+  \ '--reverse ' .
+  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-
-  if !exists(":Ag")
-    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-    nnoremap \ :Ag<SPACE>
-  endif
-endif
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let $FZF_DEFAULT_COMMAND='rg --files -g "" --hidden'
+elseif executable('ag')
+  set grepprg=ag\ --nocolor
+  let $FZF_DEFAULT_COMMAND='ag -g "" --hidden'
+end
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -60,7 +57,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Color scheme
-colorscheme github
+colorscheme monokai
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
