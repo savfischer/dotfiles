@@ -41,13 +41,10 @@ nnoremap <C-p> :Files<cr>
   \ '--reverse ' .
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+" Use ripgrep to search with fzf
 if executable('rg')
   set grepprg=rg\ --color=never
-  let $FZF_DEFAULT_COMMAND='rg --files -g "" --hidden'
-elseif executable('ag')
-  set grepprg=ag\ --nocolor
-  let $FZF_DEFAULT_COMMAND='ag -g "" --hidden'
+  let $FZF_DEFAULT_COMMAND='rg --files -g "" --hidden --ignore-file ".rignore"'
 end
 
 " Quicker window movement
@@ -57,7 +54,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " Color scheme
-colorscheme monokai
+let g:everforest_spell_foreground = 'colored'
+colorscheme everforest
+autocmd FileType eruby set spell spelllang=en_us
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
