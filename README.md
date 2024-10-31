@@ -12,8 +12,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 System link dotfiles from dropbox locations to local machine
 ````
-ln -s dropbox/dev/dotfiles/vimrc .vimrc
-ln -s dropbox/dev/dotfiles/zshrc .zshrc
-ln -s dropbox/dev/dotfiles/vimrc.bundles .vimrc.bundles
-ln -s dropbox/dev/dotfiles/agignore .agignore
+ln -sf Dropbox/dev/dotfiles/vimrc .vimrc
+ln -sf Dropbox/dev/dotfiles/zshrc .zshrc
+ln -sf Dropbox/dev/dotfiles/vimrc.bundles .vimrc.bundles
+ln -sf Dropbox/dev/dotfiles/agignore .agignore
 ````

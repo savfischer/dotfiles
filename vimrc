@@ -11,7 +11,7 @@ imap <C-s> <esc>:w<cr>
 set backspace=2   " Backspace deletes like most programs in insert mode
 set ruler         " show the cursor position all the time
 set laststatus=2  " Always display the status line
-set clipboard=unamed " Use system clipboard
+set clipboard=unnamed " Use system clipboard
 
 " Numbers
 set number
